@@ -1,14 +1,19 @@
 package com.example.controllers;
 
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Map;
 
-@Data
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
+@Getter
+@Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class JsonTwo {
     Double price;
     Map<String, Object> info;
+
+    public JsonTwo(Double price, Map<String, Object> info) {
+        this.price =price;
+        this.info = info;
+    }
 }
